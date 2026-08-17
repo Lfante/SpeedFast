@@ -59,12 +59,6 @@ Sobrescribe el método para validar el peso y el embalaje de la encomienda.
 
 Sobrescribe el método para comprobar cercanía y disponibilidad inmediata del repartidor.
 
-## Ejecución
-
-1. Abrir la carpeta del proyecto en IntelliJ IDEA.
-2. Configurar JDK 17 o superior si IntelliJ lo solicita.
-3. Ejecutar `src/app/Main.java`.
-4. Revisar la salida de consola para comprobar los distintos comportamientos.
 
 ## Ejemplo de salida
 
@@ -95,11 +89,3 @@ Tipo de pedido: Compra Express
 Asignando repartidor...
 -> Repartidor más cercano encontrado a 1.2 km con disponibilidad inmediata.
 ```
-
-## Entrega
-
-El proyecto está preparado para:
-
-- abrirse y ejecutarse en IntelliJ IDEA;
-- subirse a un repositorio público de GitHub;
-- comprimirse y entregarse en formato `.zip`.
