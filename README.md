@@ -26,6 +26,7 @@ SpeedFast_Semana1/
 │       └── PedidoExpress.java
 ├── .gitignore
 └── README.md
+└── SALIDA_CONSOLA.txt
 ```
 
 ## Clases
