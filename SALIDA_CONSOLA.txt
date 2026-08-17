@@ -1,0 +1,41 @@
+========================================
+SPEEDFAST - PRUEBA DE POLIMORFISMO
+========================================
+
+[Pedido Comida]
+ID pedido: 101
+Dirección de entrega: Av. Providencia 1234, Santiago
+Tipo de pedido: Comida
+Asignando repartidor...
+-> Verificando mochila térmica... OK
+
+[Pedido Encomienda]
+ID pedido: 102
+Dirección de entrega: Av. Irarrázaval 2450, Ñuñoa
+Tipo de pedido: Encomienda
+Asignando repartidor...
+-> Peso informado: 4.5 kg
+-> Validando peso y embalaje... OK
+
+[Pedido Express]
+ID pedido: 103
+Dirección de entrega: Gran Avenida 5200, San Miguel
+Tipo de pedido: Compra Express
+Asignando repartidor...
+-> Repartidor más cercano encontrado a 1.2 km con disponibilidad inmediata.
+
+========================================
+PRUEBA DEL MÉTODO SOBRECARGADO
+========================================
+
+[Pedido Comida - asignación]
+-> Verificando mochila térmica para Juan Pérez... OK
+-> Pedido asignado a Juan Pérez
+
+[Pedido Encomienda - asignación]
+-> Peso y embalaje validados correctamente.
+-> Pedido asignado a Camila Soto
+
+[Pedido Express - asignación]
+-> Luis Díaz está a 1.2 km y se encuentra disponible.
+-> Pedido asignado a Luis Díaz
