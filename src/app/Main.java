@@ -6,61 +6,56 @@ import model.PedidoEncomienda;
 import model.PedidoExpress;
 
 /**
- * Clase principal para probar la sobreescritura, la sobrecarga y el
- * polimorfismo solicitados en la actividad.
+ * Clase principal para probar la clase abstracta y las distintas
+ * implementaciones del cálculo de tiempo de entrega.
  */
 public class Main {
 
     public static void main(String[] args) {
 
-        // Creo un objeto de cada tipo de pedido con datos de ejemplo.
+        // Creo un objeto de cada tipo usando datos similares al ejemplo de la pauta.
         PedidoComida pedidoComida = new PedidoComida(
-                101,
-                "Av. Providencia 1234, Santiago",
-                true
+                1,
+                "Av. Italia 456",
+                4
         );
 
         PedidoEncomienda pedidoEncomienda = new PedidoEncomienda(
-                102,
-                "Av. Irarrázaval 2450, Ñuñoa",
-                4.5,
-                true
+                2,
+                "Av. Independencia 123",
+                6
         );
 
         PedidoExpress pedidoExpress = new PedidoExpress(
-                103,
-                "Gran Avenida 5200, San Miguel",
-                1.2,
-                true
+                3,
+                "Av. Apoquindo 1500",
+                7
         );
 
-        System.out.println("========================================");
-        System.out.println("SPEEDFAST - PRUEBA DE POLIMORFISMO");
-        System.out.println("========================================\n");
-
         /*
-         * Guardo objetos distintos usando el tipo de la clase padre.
-         * Cuando se llama asignarRepartidor(), Java ejecuta la versión
-         * sobrescrita que corresponde al tipo real de cada objeto.
+         * Guardo todos los objetos como Pedido.
+         * Esto me permite recorrerlos de la misma manera aunque cada clase
+         * tenga su propia implementación de calcularTiempoEntrega().
          */
-        Pedido[] pedidos = {pedidoComida, pedidoEncomienda, pedidoExpress};
+        Pedido[] pedidos = {
+                pedidoComida,
+                pedidoEncomienda,
+                pedidoExpress
+        };
+
+        System.out.println("========================================");
+        System.out.println("SPEEDFAST - TIEMPOS ESTIMADOS DE ENTREGA");
+        System.out.println("========================================");
+        System.out.println();
 
         for (Pedido pedido : pedidos) {
-            pedido.asignarRepartidor();
+            pedido.mostrarResumen();
+
+            int tiempoEstimado = pedido.calcularTiempoEntrega();
+
+            System.out.println("Tiempo estimado de entrega: "
+                    + tiempoEstimado + " minutos");
             System.out.println();
         }
-
-        System.out.println("========================================");
-        System.out.println("PRUEBA DEL MÉTODO SOBRECARGADO");
-        System.out.println("========================================\n");
-
-        // Ahora uso la versión que recibe el nombre del repartidor.
-        pedidoComida.asignarRepartidor("Juan Pérez");
-        System.out.println();
-
-        pedidoEncomienda.asignarRepartidor("Camila Soto");
-        System.out.println();
-
-        pedidoExpress.asignarRepartidor("Luis Díaz");
     }
 }

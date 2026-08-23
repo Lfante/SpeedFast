@@ -1,62 +1,31 @@
 package model;
 
 /**
- * Pedido express. La prioridad es encontrar un repartidor cercano y con
- * disponibilidad inmediata.
+ * Pedido express.
+ * Tiene 10 minutos base y agrega 5 minutos cuando la distancia supera los 5 km.
  */
 public class PedidoExpress extends Pedido {
 
-    private double distanciaRepartidorKm;
-    private boolean disponibilidadInmediata;
+    // Reglas propias de los pedidos express.
+    private static final int TIEMPO_BASE_MINUTOS = 10;
+    private static final double LIMITE_DISTANCIA_KM = 5.0;
+    private static final int RECARGO_DISTANCIA_MINUTOS = 5;
 
-    public PedidoExpress(int idPedido, String direccionEntrega,
-                         double distanciaRepartidorKm, boolean disponibilidadInmediata) {
-        super(idPedido, direccionEntrega, "Compra Express");
-        this.distanciaRepartidorKm = distanciaRepartidorKm;
-        this.disponibilidadInmediata = disponibilidadInmediata;
+    public PedidoExpress(int idPedido, String direccionEntrega, double distanciaKm) {
+        super(idPedido, direccionEntrega, distanciaKm);
     }
 
-    public double getDistanciaRepartidorKm() {
-        return distanciaRepartidorKm;
-    }
-
-    public void setDistanciaRepartidorKm(double distanciaRepartidorKm) {
-        this.distanciaRepartidorKm = distanciaRepartidorKm;
-    }
-
-    public boolean isDisponibilidadInmediata() {
-        return disponibilidadInmediata;
-    }
-
-    public void setDisponibilidadInmediata(boolean disponibilidadInmediata) {
-        this.disponibilidadInmediata = disponibilidadInmediata;
-    }
-
+    /**
+     * Si la distancia es mayor a 5 km agrego el recargo definido para este servicio.
+     */
     @Override
-    public void asignarRepartidor() {
-        System.out.println("[Pedido Express]");
-        mostrarDatosPedido();
-        System.out.println("Asignando repartidor...");
+    public int calcularTiempoEntrega() {
+        int tiempo = TIEMPO_BASE_MINUTOS;
 
-        if (disponibilidadInmediata) {
-            System.out.println("-> Repartidor más cercano encontrado a "
-                    + distanciaRepartidorKm + " km con disponibilidad inmediata.");
-        } else {
-            System.out.println("-> No hay repartidor con disponibilidad inmediata.");
+        if (getDistanciaKm() > LIMITE_DISTANCIA_KM) {
+            tiempo += RECARGO_DISTANCIA_MINUTOS;
         }
-    }
 
-    @Override
-    public void asignarRepartidor(String nombreRepartidor) {
-        System.out.println("[Pedido Express - asignación]");
-
-        if (disponibilidadInmediata) {
-            System.out.println("-> " + nombreRepartidor + " está a "
-                    + distanciaRepartidorKm + " km y se encuentra disponible.");
-            System.out.println("-> Pedido asignado a " + nombreRepartidor);
-        } else {
-            System.out.println("-> " + nombreRepartidor
-                    + " no tiene disponibilidad inmediata para este pedido.");
-        }
+        return tiempo;
     }
 }

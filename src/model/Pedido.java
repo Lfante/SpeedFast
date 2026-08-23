@@ -1,20 +1,23 @@
 package model;
 
-/**
- * Clase base para representar los datos que comparten todos los pedidos.
- */
-public class Pedido {
+import java.text.DecimalFormat;
 
-    // Los atributos quedan privados para aplicar encapsulamiento.
+/**
+ * Clase abstracta que reúne los datos y comportamientos comunes
+ * de todos los pedidos de SpeedFast.
+ */
+public abstract class Pedido {
+
+    // Estos datos se repiten en todos los tipos de pedido, por eso quedan en la clase padre.
     private int idPedido;
     private String direccionEntrega;
-    private String tipoPedido;
+    private double distanciaKm;
 
-    // Constructor completo solicitado para inicializar todos los datos del pedido.
-    public Pedido(int idPedido, String direccionEntrega, String tipoPedido) {
+    // Constructor común para inicializar los datos básicos de cualquier pedido.
+    public Pedido(int idPedido, String direccionEntrega, double distanciaKm) {
         this.idPedido = idPedido;
         this.direccionEntrega = direccionEntrega;
-        this.tipoPedido = tipoPedido;
+        this.distanciaKm = distanciaKm;
     }
 
     public int getIdPedido() {
@@ -33,34 +36,31 @@ public class Pedido {
         this.direccionEntrega = direccionEntrega;
     }
 
-    public String getTipoPedido() {
-        return tipoPedido;
+    public double getDistanciaKm() {
+        return distanciaKm;
     }
 
-    public void setTipoPedido(String tipoPedido) {
-        this.tipoPedido = tipoPedido;
-    }
-
-    /**
-     * Método base. Las clases hijas lo sobrescriben con la lógica que corresponde
-     * a cada tipo de pedido.
-     */
-    public void asignarRepartidor() {
-        System.out.println("Asignando repartidor de forma genérica...");
+    public void setDistanciaKm(double distanciaKm) {
+        this.distanciaKm = distanciaKm;
     }
 
     /**
-     * Sobrecarga del método anterior: mantiene el mismo nombre, pero ahora recibe
-     * el nombre del repartidor como parámetro.
+     * Este método ya queda implementado porque el resumen se muestra
+     * de la misma forma para todos los tipos de pedido.
      */
-    public void asignarRepartidor(String nombreRepartidor) {
-        System.out.println("Pedido asignado a " + nombreRepartidor + ".");
+    public void mostrarResumen() {
+        DecimalFormat formatoDistancia = new DecimalFormat("0.##");
+
+        System.out.println(getClass().getSimpleName()
+                + " #" + String.format("%03d", idPedido));
+        System.out.println("Dirección: " + direccionEntrega);
+        System.out.println("Distancia: "
+                + formatoDistancia.format(distanciaKm) + " km");
     }
 
-    // Método auxiliar para no repetir los datos básicos en cada subclase.
-    protected void mostrarDatosPedido() {
-        System.out.println("ID pedido: " + idPedido);
-        System.out.println("Dirección de entrega: " + direccionEntrega);
-        System.out.println("Tipo de pedido: " + tipoPedido);
-    }
+    /**
+     * Cada tipo de pedido calcula su tiempo de una manera diferente,
+     * por eso dejo este método abstracto y lo implemento en las clases hijas.
+     */
+    public abstract int calcularTiempoEntrega();
 }

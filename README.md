@@ -1,21 +1,24 @@
-# SpeedFast - Semana 1
+# SpeedFast - Semana 2
 
-Proyecto correspondiente a la actividad **"Explorando la sobrecarga y sobreescritura en clases derivadas"** de Desarrollo Orientado a Objetos II.
+Proyecto correspondiente a la actividad **"Definiendo una clase abstracta y su jerarquía"** de Desarrollo Orientado a Objetos II.
 
 ## Objetivo
 
-Representar distintos tipos de pedidos de la empresa SpeedFast y aplicar:
+Continuar el sistema de SpeedFast aplicando:
 
+- Clase abstracta.
 - Encapsulamiento.
 - Herencia.
-- Sobreescritura de métodos (`@Override`).
-- Sobrecarga de métodos.
+- Método implementado en la clase padre.
+- Método abstracto.
+- Sobrescritura.
 - Polimorfismo.
+- Reutilización de código.
 
 ## Estructura del proyecto
 
 ```text
-SpeedFast_Semana1/
+SpeedFast_Semana2/
 ├── src/
 │   ├── app/
 │   │   └── Main.java
@@ -29,64 +32,47 @@ SpeedFast_Semana1/
 └── SALIDA_CONSOLA.txt
 ```
 
-## Clases
+## Clase abstracta `Pedido`
 
-### Pedido
-
-Clase base que contiene los atributos comunes:
+La clase `Pedido` contiene los atributos comunes:
 
 - `idPedido`
 - `direccionEntrega`
-- `tipoPedido`
+- `distanciaKm`
 
-También contiene dos versiones de `asignarRepartidor()`:
+También contiene:
 
 ```java
-asignarRepartidor()
-asignarRepartidor(String nombreRepartidor)
+public void mostrarResumen()
+public abstract int calcularTiempoEntrega()
 ```
 
-Esto permite demostrar la **sobrecarga** del método.
+`mostrarResumen()` tiene una implementación común para todos los pedidos, mientras que `calcularTiempoEntrega()` se implementa de manera diferente en cada subclase.
+
+## Cálculo por tipo de pedido
 
 ### PedidoComida
 
-Sobrescribe el método para comprobar el requisito de mochila térmica.
+`15 minutos + 2 minutos por kilómetro`
 
 ### PedidoEncomienda
 
-Sobrescribe el método para validar el peso y el embalaje de la encomienda.
+`20 minutos + 1,5 minutos por kilómetro`
+
+El resultado se redondea a un número entero de minutos.
 
 ### PedidoExpress
 
-Sobrescribe el método para comprobar cercanía y disponibilidad inmediata del repartidor.
+`10 minutos base + 5 minutos extra si la distancia supera los 5 km`
 
+## Ejemplo usado en `Main`
 
-## Ejemplo de salida
+| Tipo | Distancia | Tiempo |
+|---|---:|---:|
+| PedidoComida | 4 km | 23 min |
+| PedidoEncomienda | 6 km | 29 min |
+| PedidoExpress | 7 km | 15 min |
 
-```text
-========================================
-SPEEDFAST - PRUEBA DE POLIMORFISMO
-========================================
+## Ejecución
 
-[Pedido Comida]
-ID pedido: 101
-Dirección de entrega: Av. Providencia 1234, Santiago
-Tipo de pedido: Comida
-Asignando repartidor...
--> Verificando mochila térmica... OK
-
-[Pedido Encomienda]
-ID pedido: 102
-Dirección de entrega: Av. Irarrázaval 2450, Ñuñoa
-Tipo de pedido: Encomienda
-Asignando repartidor...
--> Peso informado: 4.5 kg
--> Validando peso y embalaje... OK
-
-[Pedido Express]
-ID pedido: 103
-Dirección de entrega: Gran Avenida 5200, San Miguel
-Tipo de pedido: Compra Express
-Asignando repartidor...
--> Repartidor más cercano encontrado a 1.2 km con disponibilidad inmediata.
-```
+Abrir el proyecto en IntelliJ IDEA y ejecutar `src/app/Main.java`.
