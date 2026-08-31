@@ -1,0 +1,62 @@
+========================================
+SPEEDFAST - SISTEMA INTEGRAL DE ENTREGAS
+========================================
+
+1. RESERVA DE PEDIDOS
+----------------------------------------
+-> PedidoComida #101 reservado correctamente.
+-> PedidoEncomienda #102 reservado correctamente.
+-> PedidoExpress #103 reservado correctamente.
+
+2. ASIGNACIÓN DE REPARTIDORES
+----------------------------------------
+[Asignación automática - Pedido Comida]
+-> Verificando repartidor con mochila térmica... OK
+-> Repartidor asignado: Luis Díaz
+
+[Asignación manual - Pedido Encomienda]
+-> Validando peso y embalaje... OK
+-> Repartidor asignado: Daniela Tapia
+
+[Asignación automática - Pedido Express]
+-> Repartidor más cercano con disponibilidad inmediata encontrado.
+-> Repartidor asignado: Camila Soto
+
+3. RESUMEN Y TIEMPOS ESTIMADOS
+----------------------------------------
+PedidoComida #101
+Dirección: Av. Italia 456
+Distancia: 4 km
+Repartidor asignado: Luis Díaz
+Tiempo estimado: 23 minutos
+
+PedidoEncomienda #102
+Dirección: Av. Santa Rosa 567
+Distancia: 7 km
+Repartidor asignado: Daniela Tapia
+Tiempo estimado: 30 minutos
+
+PedidoExpress #103
+Dirección: Av. Apoquindo 1500
+Distancia: 8 km
+Repartidor asignado: Camila Soto
+Tiempo estimado: 15 minutos
+
+4. DESPACHO MEDIANTE INTERFAZ
+----------------------------------------
+[Pedido Comida]
+-> Pedido despachado correctamente.
+
+[Pedido Encomienda]
+-> Pedido despachado correctamente.
+
+5. CANCELACIÓN MEDIANTE INTERFAZ
+----------------------------------------
+Cancelando PedidoExpress #103...
+-> Pedido cancelado exitosamente.
+
+6. HISTORIAL MEDIANTE INTERFAZ
+----------------------------------------
+Historial:
+- PedidoComida #101 - entregado por Luis Díaz
+- PedidoEncomienda #102 - entregado por Daniela Tapia
