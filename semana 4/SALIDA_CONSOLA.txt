@@ -1,0 +1,33 @@
+========================================
+SPEEDFAST - SIMULACIÓN CONCURRENTE
+========================================
+
+[Repartidor: Camila] Iniciando ruta con 2 pedidos.
+[Repartidor: Luis] Iniciando ruta con 2 pedidos.
+[Repartidor: Daniela] Iniciando ruta con 2 pedidos.
+[Repartidor: Daniela] Entregando PedidoEncomienda #105...
+[Repartidor: Camila] Entregando PedidoComida #101...
+[Repartidor: Luis] Entregando PedidoExpress #103...
+[Repartidor: Luis] Pedido #103 entregado.
+[Repartidor: Luis] Entregando PedidoComida #104...
+[Repartidor: Daniela] Pedido #105 entregado.
+[Repartidor: Daniela] Entregando PedidoExpress #106...
+[Repartidor: Camila] Pedido #101 entregado.
+[Repartidor: Camila] Entregando PedidoEncomienda #102...
+[Repartidor: Luis] Pedido #104 entregado.
+[Repartidor: Luis] Ruta completada.
+[Repartidor: Daniela] Pedido #106 entregado.
+[Repartidor: Daniela] Ruta completada.
+[Repartidor: Camila] Pedido #102 entregado.
+[Repartidor: Camila] Ruta completada.
+
+========================================
+TODOS LOS REPARTIDORES FINALIZARON
+========================================
+Historial de entregas:
+- PedidoExpress #103 - entregado por Luis
+- PedidoEncomienda #105 - entregado por Daniela
+- PedidoComida #101 - entregado por Camila
+- PedidoComida #104 - entregado por Luis
+- PedidoExpress #106 - entregado por Daniela
+- PedidoEncomienda #102 - entregado por Camila
