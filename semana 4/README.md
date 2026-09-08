@@ -55,8 +55,3 @@ simulación concurrente.
 2. Marcar `src` como **Sources Root** si es necesario.
 3. Abrir `src/app/Main.java`.
 4. Ejecutar `Main.main()`.
-
-## Entrega
-
-Subir la carpeta `semana 4` al repositorio GitHub de SpeedFast y entregar además
-esta misma carpeta comprimida en `.zip` o `.rar`.
