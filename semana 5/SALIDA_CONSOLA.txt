@@ -1,0 +1,46 @@
+[Zona de carga inicializada]
+
+Pedido #1 agregado. Destino: Santiago Centro
+Pedido #2 agregado. Destino: Providencia
+Pedido #3 agregado. Destino: Ñuñoa
+Pedido #4 agregado. Destino: Recoleta
+Pedido #5 agregado. Destino: Las Condes
+Pedido #6 agregado. Destino: San Miguel
+
+Iniciando repartidores...
+
+[Repartidor - Camila] Retirando pedido #1...
+[Repartidor - Juan] Retirando pedido #2...
+[Repartidor - Pedro] Retirando pedido #3...
+[Repartidor - Camila] Estado: EN_REPARTO
+[Repartidor - Pedro] Estado: EN_REPARTO
+[Repartidor - Camila] Entregando pedido #1...
+[Repartidor - Pedro] Entregando pedido #3...
+[Repartidor - Juan] Estado: EN_REPARTO
+[Repartidor - Juan] Entregando pedido #2...
+[Repartidor - Camila] Pedido #1 entregado.
+[Repartidor - Camila] Estado: ENTREGADO
+[Repartidor - Camila] Retirando pedido #4...
+[Repartidor - Camila] Estado: EN_REPARTO
+[Repartidor - Camila] Entregando pedido #4...
+[Repartidor - Pedro] Pedido #3 entregado.
+[Repartidor - Pedro] Estado: ENTREGADO
+[Repartidor - Pedro] Retirando pedido #5...
+[Repartidor - Pedro] Estado: EN_REPARTO
+[Repartidor - Pedro] Entregando pedido #5...
+[Repartidor - Juan] Pedido #2 entregado.
+[Repartidor - Juan] Estado: ENTREGADO
+[Repartidor - Juan] Retirando pedido #6...
+[Repartidor - Juan] Estado: EN_REPARTO
+[Repartidor - Juan] Entregando pedido #6...
+[Repartidor - Camila] Pedido #4 entregado.
+[Repartidor - Camila] Estado: ENTREGADO
+[Repartidor - Camila] No quedan pedidos por retirar.
+[Repartidor - Pedro] Pedido #5 entregado.
+[Repartidor - Pedro] Estado: ENTREGADO
+[Repartidor - Pedro] No quedan pedidos por retirar.
+[Repartidor - Juan] Pedido #6 entregado.
+[Repartidor - Juan] Estado: ENTREGADO
+[Repartidor - Juan] No quedan pedidos por retirar.
+
+Todos los pedidos han sido entregados correctamente
