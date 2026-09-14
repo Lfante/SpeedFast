@@ -28,7 +28,6 @@ semana 5/
 │       ├── Pedido.java
 │       ├── Repartidor.java
 │       └── ZonaDeCarga.java
-├── .gitignore
 ├── README.md
 └── SALIDA_CONSOLA.txt
 ```
