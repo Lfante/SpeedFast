@@ -40,9 +40,3 @@ Cuando se retira un pedido, dentro de la misma sección sincronizada cambia de `
 
 ## Importante sobre la salida
 El orden de Juan, Camila y Pedro puede cambiar entre ejecuciones porque trabajan concurrentemente. Lo importante es que cada pedido se retire y entregue una sola vez y que al final aparezca `Todos los pedidos han sido entregados correctamente`.
-
-## Ejecución en IntelliJ IDEA
-1. Abrir la carpeta `semana 5`.
-2. Marcar `src` como **Sources Root** si es necesario.
-3. Abrir `src/app/Main.java`.
-4. Ejecutar `Main.main()`.
